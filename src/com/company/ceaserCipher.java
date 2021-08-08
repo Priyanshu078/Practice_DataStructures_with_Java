@@ -5,16 +5,22 @@ public class ceaserCipher {
     public String encriptString(String text, int key){
         String encriptedText = "";
         char encoded = ' ';
+        if(key < 0){
+            return "Invalid Input";
+        }
         for (int i = 0;i<text.length();i++){
             char character = text.charAt(i);
-            if(character == ' '){
+            if((character >= 'A' && character <= 'Z') || (character >= 'a' && character <= 'z')) {
+                encoded = (char) (character + key);
+            }
+            else if(character == ' '){
                 encoded = ' ';
             }
             else{
-                encoded = (char) (character + key);
+                return "Invalid Input";
             }
             encriptedText += encoded;
-        }
+            }
         return encriptedText;
     }
     public static void main(String [] args){
