@@ -19,7 +19,7 @@ public class ceaserCipher {
             else{
                 return "Invalid Input";
             }
-            encriptedText += encoded;
+            encriptedText += String.valueOf(encoded);
             }
         return encriptedText;
     }
